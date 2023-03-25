@@ -11,7 +11,9 @@ def index():
         ns=request.form.get("fname2")
         cc=request.form.get("fname3")
         cp=request.form.get("fname4")
-        return render_template('6.html', fname1=location,fname2=ns,fname3=cc,fname4=cp)
+        linc=request.form.get("fname5")
+        locationdata=[location,ns,cc,cp,linc]
+        return render_template('6.html', fname1=location,fname2=ns,fname3=cc,fname4=cp,fname5=linc)
     else:
         return render_template('5.html')
     
