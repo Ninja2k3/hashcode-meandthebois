@@ -2,6 +2,8 @@ import cv2
 import pickle
 import cvzone
 import numpy as np
+from pynput.keyboard import Key, Controller
+import keyboard
 
 # Video feed
 cap = cv2.VideoCapture('F:/Programming/Hackathon/Hashcode/hashcode-meandthebois/inputcounter/carPark.mp4')
@@ -50,9 +52,11 @@ while True:
     kernel = np.ones((3, 3), np.uint8)
     imgDilate = cv2.dilate(imgMedian, kernel, iterations=1)
 
-
     checkParkingSpace(imgDilate)
     cv2.imshow("Image", img)
     #cv2.imshow("ImageBlur", imgBlur)
     #cv2.imshow("ImageThres", imgMedian)
     cv2.waitKey(10)
+    
+    
+    
