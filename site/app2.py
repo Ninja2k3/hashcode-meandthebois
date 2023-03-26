@@ -1,5 +1,7 @@
 from flask import Flask,render_template,Response,request,redirect,url_for
 import pyrebase
+import time
+import datetime
 
 config = {
     "apiKey": "AIzaSyDybkQ-gyeyXoXZlF8fy26Y5JXo4svBq6Y",
@@ -67,7 +69,9 @@ def parklocations():
 
 @app.route('/parking')
 def parking():
-    return render_template('8.html')
+    tim1=time.time()
+    tim2=time.time()
+    return render_template('8.html',fname1=tim1,fname2=tim2)
 
 @app.route('/wallet')
 def wallet():
@@ -77,7 +81,9 @@ def wallet():
 def redeem():
     return render_template('10.html')
 
-
+@app.route('/feedback')
+def fback():
+    return render_template('12.html')
 
 @app.route('/publicspace')
 def pp():
